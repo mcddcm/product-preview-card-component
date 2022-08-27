@@ -1,0 +1,174 @@
+/*******************************************
+/* BASE STYLES
+/*******************************************/
+
+* {
+  box-sizing: border-box;
+}
+
+/* Flexbox container to centre card on page*/
+body {
+  font-size: 62.5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  min-height: 100vh;
+  text-align: left;
+  background-color: hsl(30, 38%, 92%);
+}
+
+/*******************************************
+/* LAYOUT
+/*******************************************/
+
+/* Grid container */
+.product-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px;
+  max-width: 600px;
+}
+
+/* Grid item 1 */
+.card-left {
+  min-width: 300px;
+  background: url(../images/image-product-desktop.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.8em 0 0 0.8em;
+}
+
+/* Grid item 2 & Flexbox container */
+.card-right {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 2em 3em;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0 0.8em 0.8em 0;
+}
+
+/* Flexbox item 1 */
+.card-product-category {
+  margin: 1em 0 1.6em;
+  width: 100%;
+}
+
+/* Flexbox item 2 */
+.card-product-title {
+  margin: 0 0 0.6em;
+  width: 90%;
+  max-width: 90%;
+}
+
+/* Flexbox item 3 */
+.card-product-description {
+  margin: 0 0 1.6em;
+  padding: 0 0.2em;
+  width: 100%;
+  line-height: 1.5;
+}
+
+/* Flexbox item 4 & Grid container 2 */
+.card-product-prices {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  margin: 0 0 0.8em;
+  width: 100%;
+}
+
+/* Grid container 2 item 1 */
+.card-discounted-price {
+  margin: 0 auto;
+  padding: 0.1em 0.1em 0.1em 0;
+}
+
+/* Grid container 2 item 2 */
+.card-original-price {
+  margin: 1em;
+  padding: 0.2em;
+  text-decoration: line-through;
+}
+
+/* Flexbox item 5 */
+.card-button {
+  margin: 1.2em 0;
+  padding: 1.3em 0;
+  width: 100%;
+  border-radius: 0.5em;
+  border: none;
+  background-color: hsl(158, 36%, 37%);
+  align-self: center;
+}
+
+.card-button:hover {
+  background-color: hsl(158, 36%, 20%);
+  cursor: pointer;
+}
+
+.card-button-icon {
+  margin: 0 1em 0 0;
+  color: hsl(0, 0%, 100%);
+  vertical-align: middle;
+}
+
+
+/*******************************************
+/* MOBILE STYLES
+/*******************************************/
+@media only screen and (max-device-width: 768px) {
+  .product-card {
+    height: 90vh;
+    grid-template-columns: unset;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .card-left {
+    background: url(../images/image-product-mobile.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.8em 0.8em 0 0;
+  }
+
+  .card-right {
+    padding: 1em 2em;
+    border-radius: 0 0 0.8em 0.8em;
+  }
+
+  .card-product-category {
+    margin: 1em 0 1.2em;
+  }
+
+  .card-product-title {
+    margin: 0 0 0.4em;
+    width: 100%;
+  }
+
+  .card-product-description {
+    margin: 0 0 0.8em;
+    width: 98%;
+  }
+
+  .card-discounted-price {
+    margin: 0;
+    padding-left: 0.1em;
+  }
+
+}
+
+
+/*******************************************
+/* ACCESSIBILITY
+/*******************************************/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
